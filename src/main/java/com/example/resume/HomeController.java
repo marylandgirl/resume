@@ -30,7 +30,7 @@ public class HomeController {
 
     @PostMapping("/processprofile")public String processProfileForm(@Valid @ModelAttribute("profile") Profile profile, BindingResult result){
         if (result.hasErrors()) {
-            return "jobform";
+            return "experiences";
         }
         profileRepository.save(profile);
         return "redirect:/listexp";
