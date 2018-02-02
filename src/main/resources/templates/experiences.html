@@ -9,10 +9,10 @@
 
 <table>
     <tr th:each="resume :${resumes}">
-        <p> Job Title <span th:text="${resume.jobTitle}"></span></p>
-        <p> Employer <span th:text="${resume.employer}"></span></p>
-        <p> Dates <span th:text="${resume.when}"></span></p>
-        <p> Duties <span th:text="${resume.duties}"></span></p>
+        <p> <b>Job Title: </b> <span th:text="${resume.jobTitle}"></span></p>
+        <p> <b>Employer: </b><span th:text="${resume.employer}"></span></p>
+        <p> <b>Dates: </b><span th:text="${resume.when}"></span></p>
+        <p> <b>Duties: </b><span th:text="${resume.duties}"></span></p>
         <td>
             <a th:href="@{/update/{id} (id=${resume.id})}">Update</a>
             <a th:href="@{/detail/{id} (id=${resume.id})}">Details</a>
