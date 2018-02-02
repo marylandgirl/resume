@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Job Details</title>
+    <title>Job Information</title>
 </head>
 <body>
-    Kim this works!
+<a href="/addjobs">Add Job Details</a><br />
+<table>
+    <tr>
+        <th>Job Title</th>
+        <th>Employer</th>
+        <th>Dates</th>
+        <th>Duties</th>
+        <td>Actions</td>
+    </tr>
+
+    <tr th:each="resume :${resumes}">
+        <td th:text="${resume.jobTitle}"></td>
+        <td th:text="${resume.employer}"></td>
+        <td th:text="${resume.when}"></td>
+        <td th:text="${resume.duties}"></td>
+        <td>
+            <a th:href="@{/update/{id} (id=${resume.id})}">Update</a>
+            <a th:href="@{/detail/{id} (id=${resume.id})}">Details</a>
+            <a th:href="@{/delete/{id} (id=${resume.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

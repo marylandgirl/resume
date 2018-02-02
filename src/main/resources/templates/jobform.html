@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add Job Information</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${resume}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    Job Title :<input type="text" th:field="*{jobTitle}" />
+    <span th:if="${#fields.hasErrors('jobTitle')}"
+          th:errors="*{jobTitle}"></span><br />
+    Employer :<input type="text" th:field="*{employer}" />
+    <span th:if="${#fields.hasErrors('employer')}"
+          th:errors="*{employer}"></span><br />
+    Dates :<input type="text" th:field="*{when}" />
+    <span th:if="${#fields.hasErrors('when')}"
+          th:errors="*{when}"></span><br />
+    Duties :<input type="text" th:field="*{duties}" />
+    <span th:if="${#fields.hasErrors('duties')}"
+          th:errors="*{duties}"></span><br />
+    <input type="submit" value="Submit" />
+
+</form>
+</body>
+</html>
