@@ -3,10 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -28,7 +25,7 @@ public class HomeController {
         return "jobform";
     }
 
-    @PostMapping("/process")public String processForm(@Valid Resume resume, BindingResult result){
+    @PostMapping("/process")public String processForm(@Valid @ModelAttribute("resume") Resume resume, BindingResult result){
         if (result.hasErrors()) {
             return "jobform";
         }
