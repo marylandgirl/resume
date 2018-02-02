@@ -6,13 +6,20 @@
 </head>
 <body>
 <a href="/addjobs">Add Job Details</a><br />
-
 <table>
+    <tr>
+        <th>Job Title</th>
+        <th>Employer</th>
+        <th>Dates</th>
+        <th>Duties</th>
+        <td>Actions</td>
+    </tr>
+
     <tr th:each="resume :${resumes}">
-        <p> Job Title <span th:text="${resume.jobTitle}"></span></p>
-        <p> Employer <span th:text="${resume.employer}"></span></p>
-        <p> th:text="${resume.when}"></p>
-        <p th:text="${resume.duties}"></p>
+        <td th:text="${resume.jobTitle}"></td>
+        <td th:text="${resume.employer}"></td>
+        <td th:text="${resume.when}"></td>
+        <td th:text="${resume.duties}"></td>
         <td>
             <a th:href="@{/update/{id} (id=${resume.id})}">Update</a>
             <a th:href="@{/detail/{id} (id=${resume.id})}">Details</a>
