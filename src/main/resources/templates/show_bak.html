@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Show Job</title>
+</head>
+<body>
+<a href="/">Show Job Information</a><br />
+Job Title :<span th:text="${resume.jobTitle}"></span><br />
+Employer :<span th:text="${resume.employer}"></span><br />
+Dates Employed :<span th:text="${resume.when}"></span><br />
+Duties :<span th:text="${resume.duties}"></span><br />
+<a th:href="@{/delete/{id}(id=${resume.id})}">Delete this job</a>
+</body>
+</html>

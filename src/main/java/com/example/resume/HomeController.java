@@ -33,5 +33,10 @@ public class HomeController {
         return "redirect:/listexp";
     }
 
+    @RequestMapping("/detail/{id}")
+    public String showJob(@PathVariable("id") long id, Model model) {
+        model.addAttribute("resume", resumeRepository.findOne(id));
+        return "show";
+    }
 
 }
