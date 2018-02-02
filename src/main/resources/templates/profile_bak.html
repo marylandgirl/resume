@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Profile Information</title>
+</head>
+<body>
+<a href="/addjobs">Add Job  </a><br />
+
+<table>
+    <tr th:each="profile :${profiles}">
+        <p> <b>Name: </b> <span th:text="${profile.name}"></span></p>
+        <p> <b>email: </b><span th:text="${profile.email}"></span></p>
+        <p> <b>Education: </b><span th:text="${profile.education}"></span></p>
+        <p> <b>Skill: </b><span th:text="${profile.skills}"></span></p>
+        <p> <span><a th:href="@{/detail/{id} (id=${profile.id})}">Details</a></span></p>
+     </tr>
+</table>
+</body>
+</html>

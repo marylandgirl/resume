@@ -11,7 +11,30 @@ import javax.validation.Valid;
 public class HomeController {
 
     @Autowired
-    ResumeRepository resumeRepository;
+    ResumeRepository  resumeRepository;
+
+    @Autowired
+    ProfileRepository profileRepository;
+
+    @RequestMapping("/")
+    public String listProfile(Model model) {
+        model.addAttribute("profiles", profileRepository.findAll());
+        return "profile";
+    }
+
+    @GetMapping("/addprofile")
+    public String profileForm(Model model){
+        model.addAttribute("profile",new Profile());
+        return "profileform";
+    }
+
+    @PostMapping("/processprofile")public String processProfileForm(@Valid @ModelAttribute("profile") Profile profile, BindingResult result){
+        if (result.hasErrors()) {
+            return "jobform";
+        }
+        profileRepository.save(profile);
+        return "redirect:/listexp";
+    }
 
     @RequestMapping("/listexp")
     public String listExperiences(Model model) {
