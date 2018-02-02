@@ -8,6 +8,12 @@
 <a href="/addjobs">Add Job  </a><br />
 
 <table>
+    <tr th:each="profile :${profiles}">
+        <p> <b>Name: </b> <span th:text="${profile.name}"></span></p>
+        <p> <b>Email: </b><span th:text="${profile.email}"></span></p>
+        <p> <b>Education: </b><span th:text="${profile.education}"></span></p>
+        <p> <b>Skill: </b><span th:text="${profile.skills}"></span></p>
+    </tr>
     <tr th:each="resume :${resumes}">
         <p> <b>Job Title: </b> <span th:text="${resume.jobTitle}"></span></p>
         <p> <b>Employer: </b><span th:text="${resume.employer}"></span></p>

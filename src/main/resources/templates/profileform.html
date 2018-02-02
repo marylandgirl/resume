@@ -19,11 +19,23 @@
     Education :<input type="text" th:field="*{education}" />
     <span th:if="${#fields.hasErrors('education')}"
           th:errors="*{education}"></span><br />
-    Skills :<input type="text" th:field="*{skills}" />
-    <span th:if="${#fields.hasErrors('skills')}"
-          th:errors="*{skills}"></span><br />
+    Skill :<input type="text" th:field="*{skill_1}" />
+    <span th:if="${#fields.hasErrors('skill_1')}"
+          th:errors="*{skill_1}"></span>
+    Proficiency (e.g. 1 to 5, or beginner to proficient) :<input type="text" th:field="*{level_1}" />
+    <span th:if="${#fields.hasErrors('level_1')}"
+          th:errors="*{level_1}"></span>
+    <br />
+    Skill :<input type="text" th:field="*{skill_2}" />
+    <span th:if="${#fields.hasErrors('skill_2')}"
+          th:errors="*{skill_2}"></span>
+    Proficiency (e.g. 1 to 5, or beginner to proficient) :<input type="text" th:field="*{level_2}" />
+    <span th:if="${#fields.hasErrors('level_2')}"
+          th:errors="*{level_2}"></span>
+    <br />
     <input type="submit" value="Submit" />
 
 </form>
 </body>
 </html>
+

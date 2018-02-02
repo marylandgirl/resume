@@ -12,7 +12,10 @@
         <p> <b>Name: </b> <span th:text="${profile.name}"></span></p>
         <p> <b>Email: </b><span th:text="${profile.email}"></span></p>
         <p> <b>Education: </b><span th:text="${profile.education}"></span></p>
-        <p> <b>Skills: </b><span th:text="${profile.skills}"></span></p>
+        <p> <b>Skill: </b><span th:text="${profile.skill_1}"></span></p>
+        <p> <b>Level: </b><span th:text="${profile.level_1}"></span></p>
+        <p> <b>Skill: </b><span th:text="${profile.skill_2}"></span></p>
+        <p> <b>Level: </b><span th:text="${profile.level_2}"></span></p>
     </tr>
     <tr th:each="resume :${resumes}">
         <p> <b>Job Title: </b> <span th:text="${resume.jobTitle}"></span></p>

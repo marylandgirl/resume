@@ -21,7 +21,7 @@
           th:errors="*{when}"></span><br />
     Duties :<input type="text" th:field="*{duties}" />
     <span th:if="${#fields.hasErrors('duties')}"
-          th:errors="*{duties}"></span><br />
+          th:errors="*{duties}"></span> <br />
     <input type="submit" value="Submit" />
 
 </form>

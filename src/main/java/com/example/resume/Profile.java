@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -21,7 +23,21 @@ public class Profile {
     private String education;
 
     @NotNull
-    private String skills;
+    private String skill_1;
+
+    @NotNull
+    @Min(1)
+    @Max(5)
+    private String level_1;
+
+    @NotNull
+    private String skill_2;
+
+    @NotNull
+    @Min(1)
+    @Max(5)
+    private String level_2;
+
 
     public Profile() {
     }
@@ -58,11 +74,35 @@ public class Profile {
         this.education = education;
     }
 
-    public String getSkills() {
-        return skills;
+    public String getSkill_1() {
+        return skill_1;
     }
 
-    public void setSkills(String skills) {
-        this.skills = skills;
+    public void setSkill_1(String skill_1) {
+        this.skill_1 = skill_1;
+    }
+
+    public String getLevel_1() {
+        return level_1;
+    }
+
+    public void setLevel_1(String level_1) {
+        this.level_1 = level_1;
+    }
+
+    public String getSkill_2() {
+        return skill_2;
+    }
+
+    public void setSkill_2(String skill_2) {
+        this.skill_2 = skill_2;
+    }
+
+    public String getLevel_2() {
+        return level_2;
+    }
+
+    public void setLevel_2(String level_2) {
+        this.level_2 = level_2;
     }
 }
