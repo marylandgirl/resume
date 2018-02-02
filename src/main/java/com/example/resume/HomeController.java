@@ -39,6 +39,7 @@ public class HomeController {
     @RequestMapping("/listexp")
     public String listExperiences(Model model) {
         model.addAttribute("resumes", resumeRepository.findAll());
+        model.addAttribute("profiles", profileRepository.findAll()); //expecting only 1 record here
         return "experiences";
     }
 
